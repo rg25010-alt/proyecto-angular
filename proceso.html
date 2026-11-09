@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Procesar Datos</title>
+</head>
+<body>
+    <main>
+        <p><a href="index.html">Regresar al formulario</a></p>
+
+        <section>
+            <h2>Resumen de Datos Registrados</h2>
+
+            <h3>Datos Personales</h3>
+            <ul>
+                <li><strong>Nombre:</strong> <span id="mostrarNombre"></span></li>
+                <li><strong>Apellido:</strong> <span id="mostrarApellido"></span></li>
+                <li><strong>Correo:</strong> <span id="mostrarCorreo"></span></li>
+                <li><strong>Teléfono:</strong> <span id="mostrarTelefono"></span></li>
+                <li><strong>Fecha de Nacimiento:</strong> <span id="mostrarFecha"></span></li>
+            </ul>
+
+            <h3>Datos Académicos</h3>
+            <ul>
+                <li><strong>Carrera:</strong> <span id="mostrarCarrera"></span></li>
+                <li><strong>Ciclo:</strong> <span id="mostrarCiclo"></span></li>
+                <li><strong>Año de Ingreso:</strong> <span id="mostrarAnoIngreso"></span></li>
+                <li><strong>Edad:</strong> <span id="mostrarEdad"></span></li>
+            </ul>
+
+            <h3>Preferencias</h3>
+            <ul>
+                <li><strong>Género:</strong> <span id="mostrarGenero"></span></li>
+                <li><strong>Intereses:</strong> <span id="mostrarIntereses"></span></li>
+                <li><strong>Nivel de estudio:</strong> <span id="mostrarNivel"></span></li>
+                <li><strong>Comentarios:</strong> <span id="mostrarComentarios"></span></li>
+            </ul>
+        </section>
+    </main>
+
+    <script>
+        var urlParams = new URLSearchParams(window.location.search);
+
+       
+        var carreras = {
+            'ingenieria-sistemas': 'Ingeniería en Sistemas',
+            'Arquitectura': 'Arquitectura',
+            'Ingeniería-Industrial': 'Ingeniería Industrial',
+            'Ingenieria-Electrica': 'Ingeniería Eléctrica'
+        };
+
+        var ciclos = {
+            'ciclo-01': 'Ciclo I',
+            'ciclo-02': 'Ciclo II'
+        };
+
+        var generos = {
+            'femenino': 'Femenino',
+            'masculino': 'Masculino',
+            'otro': 'Otro'
+        };
+
+        var niveles = {
+            '1': 'Básico',
+            '2': 'Intermedio',
+            '3': 'Avanzado'
+        };
+
+        
+        var intereses = [];
+        if (urlParams.getAll('intereses').length > 0) {
+            intereses = urlParams.getAll('intereses');
+        }
+
+        
+        document.getElementById('mostrarNombre').textContent = urlParams.get('nombre') || 'No enviado';
+        document.getElementById('mostrarApellido').textContent = urlParams.get('apellido') || 'No enviado';
+        document.getElementById('mostrarCorreo').textContent = urlParams.get('correo') || 'No enviado';
+        document.getElementById('mostrarTelefono').textContent = urlParams.get('telefono') || 'No enviado';
+        document.getElementById('mostrarFecha').textContent = urlParams.get('fecha_nacimiento') || 'No enviado';
+
+        
+        var carreraValor = urlParams.get('carrera');
+        document.getElementById('mostrarCarrera').textContent = carreras[carreraValor] || carreraValor || 'No seleccionada';
+
+        var cicloValor = urlParams.get('ciclo');
+        document.getElementById('mostrarCiclo').textContent = ciclos[cicloValor] || cicloValor || 'No seleccionado';
+
+        document.getElementById('mostrarAnoIngreso').textContent = urlParams.get('ano_ingreso') || 'No enviado';
+        document.getElementById('mostrarEdad').textContent = urlParams.get('edad') || 'No enviado';
+
+    
+        var generoValor = urlParams.get('genero');
+        document.getElementById('mostrarGenero').textContent = generos[generoValor] || generoValor || 'No seleccionado';
+
+        document.getElementById('mostrarIntereses').textContent = intereses.length > 0 ? intereses.join(', ') : 'Ninguno seleccionado';
+
+        var nivelValor = urlParams.get('nivel_estudio');
+        document.getElementById('mostrarNivel').textContent = niveles[nivelValor] || nivelValor || 'No seleccionado';
+
+        document.getElementById('mostrarComentarios').textContent = urlParams.get('comentarios') || 'Sin comentarios';
+    </script>
+</body>
+</html>

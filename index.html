@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulario de Registro de Usuario</title>
+</head>
+  
+<body>
+  <main>
+    <header> 
+      <h1>Formulario de registro de Usuario</h1>
+      <ul>
+        <li><a href="#Inicio">Inicio</a></li>
+        <li><a href="#Registro">Registro</a></li>
+        <li><a href="#Ayuda">Ayuda</a></li>
+      </ul>
+    </header>
+
+    <article id="Inicio">
+      <h1>Registro de usuario</h1>
+      <p>Completa el siguiente formulario para registrarte en el sistema</p>
+      <p>Los campos marcados por ° son obligatorios</p>
+    </article>
+        
+    <section id="Registro">
+      
+      <form id="formularioRegistro" action="resumen.html" method="GET">
+        
+        <fieldset style="border: 2px solid black; padding: 15px; margin-top: 20px;">
+          <legend><h2>DATOS ACADÉMICOS</h2></legend>
+          
+          <p>
+            <label for="nombre">Nombre Completo:</label><br>
+            <input type="text" id="nombre" name="nombre" placeholder="Ej. Maria Gonzales" required>
+          </p>
+     
+          <p>
+            <label for="apellido">Apellido:</label><br>
+            <input type="text" id="apellido" name="apellido" placeholder="Ej. Pérez" required>
+          </p>
+    
+          <p>
+            <label for="correo">Correo Electrónico:</label><br>
+            <input type="email" id="correo" name="correo" placeholder="777777" required>
+          </p>
+
+          <p>
+            <label for="telefono">Teléfono:</label><br>
+            <input type="tel" id="telefono" name="telefono" placeholder="+503 1234-5678" required>
+          </p>
+    
+          <p>
+            <label for="fecha_nacimiento">Fecha de Nacimiento:</label><br>
+            <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required>
+          </p>
+        </fieldset>
+
+        <fieldset style="border: 2px solid black; padding: 15px; margin-top: 20px;">
+          <legend><h2>DATOS ACADÉMICOS</h2></legend>
+          
+          <p>
+            <label for="carrera">Carrera:</label><br>
+            <select id="carrera" name="carrera" required>
+              <option value="" disabled selected>Seleccione una carrera</option>
+              <option value="ingenieria-sistemas">Ingeniería en Sistemas</option>
+              <option value="Arquitectura">Arquitectura</option>
+              <option value="Ingeniería-Industrial">Ingeniera Industrial</option>
+              <option value="Ingenieria-Electrica">Ingenieria Electrica</option>
+            </select>
+          </p>
+          
+          <p>
+            <label for="ciclo">Ciclo Académico:</label><br>
+            <select id="ciclo" name="ciclo" required>
+              <option value="" disabled selected>Seleccione el ciclo</option>
+              <option value="ciclo-01">Ciclo 01</option>
+              <option value="ciclo-02">Ciclo 02</option>
+            </select>
+          </p>
+
+          <p>
+            <label for="ano_ingreso">Año de Ingreso:</label><br>
+            <input type="number" id="ano_ingreso" name="ano_ingreso" min="1990" max="2026" placeholder="Ej. 2024" required>
+          </p>
+            
+          <p>
+            <label for="edad">Edad:</label><br>
+            <input type="number" id="edad" name="edad" min="15" max="99" placeholder="Ej. 20" required>
+          </p>
+        </fieldset>
+
+        <fieldset style="border: 2px solid black; padding: 15px; margin-top: 20px;">
+          <legend><h2>PREFERENCIAS</h2></legend>
+           
+          <p>
+            <strong>Género:</strong><br>
+            <input type="radio" id="femenino" name="genero" value="femenino">
+            <label for="femenino">Femenino</label><br>
+
+            <input type="radio" id="masculino" name="genero" value="masculino">
+            <label for="masculino">Masculino</label><br>
+
+            <input type="radio" id="otro" name="genero" value="otro">
+            <label for="otro">Otro</label>
+          </p>
+           
+          <p>
+            <strong>Intereses:</strong><br>
+            <input type="checkbox" id="Deportes" name="intereses" value="Deportes">
+            <label for="Deportes">Deportes</label><br>
+
+            <input type="checkbox" id="Musica" name="intereses" value="Musica">
+            <label for="Musica">Musica</label><br>
+
+            <input type="checkbox" id="Cine" name="intereses" value="Cine">
+            <label for="Cine">Cine</label><br>
+
+            <input type="checkbox" id="Lectura" name="intereses" value="Lectura">
+            <label for="Lectura">Lectura</label><br>
+
+            <input type="checkbox" id="Tecnologia" name="intereses" value="Tecnologia">
+            <label for="Tecnologia">Tecnologia</label>
+          </p>
+            
+          <p>
+            <label for="nivel_estudio"><strong>Nivel de estudio:</strong></label><br>
+            <input type="range" id="nivel_estudio" name="nivel_estudio" min="1" max="3" step="1" value="3">
+          </p>
+        </fieldset>
+         
+        <fieldset style="border: 2px solid black; padding: 15px; margin-top: 20px;">
+          <legend><h2>Seguridad</h2></legend>
+          
+          <p>
+            <label for="constraseña">Contraseña</label><br>
+            <input type="text" id="constraseña" name="constraseña" placeholder="*****" required>
+          </p>
+                
+          <p>
+            <label for="conficonstraseña">Confirmar contraseña</label><br>
+            <input type="text" id="conficonstraseña" name="conficonstraseña" placeholder="*****" required>
+          </p> 
+        </fieldset>
+
+        <fieldset style="border: 2px solid black; padding: 15px; margin-top: 20px;">
+          <legend><h2>PREFERENCIAS</h2></legend>
+          
+          <p>
+            <strong>Comentarios</strong><br>
+            <input type="checkbox" id="Terminos" name="Comentarios" value="Terminos">
+            <label for="Terminos">Términos y Condiciones</label><br>
+          </p> 
+          
+          <p>
+            <label for="comentarios"><strong>Comentarios adicionales:</strong></label><br>
+            <textarea id="comentarios" name="comentarios" rows="6" cols="50" placeholder="Escribe aquí tus comentarios..."></textarea>
+          </p>
+        </fieldset>
+         
+        <button type="submit">Guardar Preferencias</button>
+      </form>
+    </section>
+  </main>
+</body>
+</html>
